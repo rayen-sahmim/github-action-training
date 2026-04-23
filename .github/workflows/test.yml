@@ -1,0 +1,17 @@
+name: Test Project
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v6
+      - name: install node
+        uses: actions/setup-node@v6
+      - name: install dependencies
+        run: npm ci
+      - name: run tests
+        run: npm test
+      
+          
+          
